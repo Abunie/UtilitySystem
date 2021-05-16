@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title> World of Web developers </title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../shared/style.css">
+<script src="js/script.js"></script>
+
+
+
+</head>
+<body>
+    <header>
+        <div class="topnav">
+                <h1 style="align-self: center">Utility Tools</h1>
+       </div>   
+    </header>
+ 
+    
+
+<h2>Select the tool you would like to use:</h2>
+<hr>
+<div style = "text-align:center;">
+    <div class="tab">
+      <button id="meaurement_converter" class="tablinks" onclick="openCity(event, 'Measurement')">Measurement Converter</button>
+      <button id="mortgage_calculator" class="tablinks" onclick="openCity(event, 'Mortgage')">Mortgage Calculator</button>
+      <button id="currency_calculator" class="tablinks" onclick="openCity(event, 'Currency')">Currency Converter</button>
+    </div>
+
+
+    <div id="Measurement" class="tabcontent">
+      <h3>Measurement Converter</h3>
+      <p>Use our Measurement Converter to convert measurements in one unit to another unit</p> 
+       
+       <h4>Weight</h4>
+       <form>
+            <label> From: </label>  
+                <select onchange="calculateWeight()" class="form-control" id="weight_unit1">
+					<option value="Kilogram">Kilogram</option>
+					<option value="Pound">Pound</option>
+					<option value="Ounce">Ounce</option>
+				</select> 
+               <input type="number" oninput="calculateWeight()" class="form-control" id="weight1"/>
+            <label> To: </label>  
+                <select onchange="calculateWeight()" class="form-control" id="weight_unit2">
+					<option value="Kilogram">Kilogram</option>
+					<option value="Pound">Pound</option>
+					<option value="Ounce">Ounce</option>
+				</select> 
+             <input type="number" class="form-control" id="weight2" disabled="disabled"/>
+        </form>
+        <br>
+        <h4>Length</h4>
+       <form>
+            <label> From: </label>  
+                <select onchange="calculateLength()" class="form-control" id="length_unit1">
+					<option value="Meter">Meter</option>
+					<option value="Inch">Inch</option>
+					<option value="Foot">Foot</option>
+				</select> 
+               <input type="number" oninput="calculateLength()" class="form-control" id="length1"/>
+            <label> To: </label>  
+                <select onchange="calculateLength()" class="form-control" id="length_unit2">
+					<option value="Meter">Meter</option>
+					<option value="Inch">Inch</option>
+					<option value="Foot">Foot</option>
+				</select> 
+             <input type="number" class="form-control" id="length2" disabled="disabled"/>
+        </form>
+        <br>
+        <h4>Area</h4>
+         <form>
+            <label> From: </label>  
+                <select onchange="calculateArea()" class="form-control" id="area_unit1">
+					<option value="Meter2">Square meter</option>
+					<option value="Inch2">Square Inch</option>
+					<option value="Foot2">Square Foot </option>
+				</select> 
+               <input type="number" oninput="calculateArea()" class="form-control" id="area1"/>
+            <label> To: </label>  
+                <select onchange="calculateArea()" class="form-control" id="area_unit2">
+					<option value="Meter2">Square meter</option>
+					<option value="Inch2">Square Inch </option>
+					<option value="Foot2">Square Foot </option>
+				</select> 
+             <input type="number" class="form-control" id="area2" disabled="disabled"/>
+        </form>
+        <br>
+        <h4>Volume</h4>
+         <form>
+            <label> From: </label>  
+                <select onchange="calculateVolume()" class="form-control" id="volume_unit1">
+					<option value="Meter3">Cubic Meter</option>
+					<option value="Inch3">Cubic cubed</option>
+					<option value="Foot3">Cubic cubed</option>
+				</select> 
+               <input type="number" oninput="calculateVolume()" class="form-control" id="volume1"/>
+            <label> To: </label>  
+                <select onchange="calculateVolume()" class="form-control" id="volume_unit2">
+					<option value="Meter3">Cubic Meter</option>
+					<option value="Inch3">Cubic Inch</option>
+					<option value="Foot3">Cubic Foot</option>
+				</select> 
+             <input type="number" class="form-control" id="volume2" disabled="disabled"/>
+        </form>
+        <br>
+        <h4>Temperature (Bonus Feature)</h4>
+       <form>
+            <label> From: </label>  
+                <select onchange="calculateTemperature()" class="form-control" id="temp_unit1">
+					<option value="Kelvin">Kelvin</option>
+					<option value="Celsius">Celsius</option>
+					<option value="Fahrenheit">Fahrenheit</option>
+				</select> 
+               <input type="number" oninput="calculateTemperature()" class="form-control" id="temp1"/>
+            <label> To: </label>  
+                <select onchange="calculateTemperature()" class="form-control" id="temp_unit2">
+					<option value="Kelvin">Kelvin</option>
+					<option value="Celsius">Celsius</option>
+					<option value="Fahrenheit">Fahrenheit</option>
+				</select> 
+             <input type="number" class="form-control" id="temp2" disabled="disabled"/>
+        </form>
+        
+    <br>
+    <br>
+    <p>Source:  <a style="color: blue" href="https://www.google.com/">Google</a></p>
+    </div>
+    
+    <div id="Mortgage" class="tabcontent">
+      <h3>Mortgage Calculator</h3>
+      <p>Use our Mortgage Calculator to estimate your monthly mortgage payment</p>
+       <label> You borrowed  </label> <input type="number" oninput="calculateMortgage()" class="form-control" id="principal"/> 
+       <label> at an interest rate of </label> <input type="number" oninput="calculateMortgage()" class="form-control" id="interest_rate"/> 
+       <label> to be paid over a period of </label> <input type="number" oninput="calculateMortgage()" class="form-control" id="payment_period"/>  years.   
+       <br>
+       <br>
+    
+       <label> Your monthly mortgage would be </label> 
+       <input type="number" class="form-control" id="mortgage" disabled="disabled"/>.
+        
+      <br>
+      <br>
+      <p > Mortgage Formula Source : <a style="color: blue" href="https://www.youtube.com/watch?v=Pgot9V7uZXw"> 
+Edspira</a></p>
+        
+    </div>
+
+    <div id="Currency" class="tabcontent">
+      <h3>Currency Converter</h3>
+      <p>Use our Currency Converter to change your foreign currencies to Canadian Dollars or vice versa.</p>
+        <h4> Foreign Currency to Canadian Dollars </h4>
+        <form>
+            <label> Foreign Currency:  <select onchange="calculateToCAD()" class="form-control" id="toCAD">
+					<option value="US Dollar">US Dollar</option>
+					<option value="Pound">Pound</option>
+					<option value="Euro">Euro</option>
+                    <option value="Naira">Naira</option>
+					<option value="Indian Rupee">Indian Rupee</option>
+                    <option value="Pakistani Rupee">Pakistani Rupee</option>
+                    <option value="Russian Ruble">Russian Ruble</option>
+					<option value="Birr">Birr</option>
+                    <option value="Dirham">Dirham</option>
+					<option value="Yen">Yen</option>
+					<option value="Yuan">Yuan</option>
+				</select> </label>
+             <input type="number" oninput="calculateToCAD()" class="form-control" id="toCAD1"/> 
+            <label>Canadian Dollar: <input type="number" class="form-control" id="toCAD2" disabled="disabled"/></label>
+        </form>
+        <br>
+        
+        <h4>Canadian Dollars to Foreign Currency </h4>
+        <form>
+            <label>Canadian Dollar: <input type="number" oninput="calculateFromCAD()" class="form-control" id="fromCAD1"/></label> 
+            <label> Foreign Currency:  <select onchange="calculateFromCAD()" class="form-control" id="fromCAD">
+					<option value="US Dollar">US Dollar</option>
+					<option value="Pound">Pound</option>
+					<option value="Euro">Euro</option>
+                    <option value="Naira">Naira</option>
+					<option value="Indian Rupee">Indian Rupee</option>
+                    <option value="Pakistani Rupee">Pakistani Rupee</option>
+                    <option value="Russian Ruble">Russian Ruble</option>
+					<option value="Birr">Birr</option>
+                    <option value="Dirham">Dirham</option>
+					<option value="Yen">Yen</option>
+					<option value="Yuan">Yuan</option>
+				</select> </label>
+             <input type="number" class="form-control" id="fromCAD2" disabled="disabled"/>
+        </form>
+        <br>
+        
+       <p > <a style="color: blue" href="https://www.google.com/intl/en/googlefinance/disclaimer/" >Exchange rate Source: Morningstar for Currency and Coinbase for Cryptocurrency </a></p>
+    
+    </div>
+</div>
+</body>
+</html>
